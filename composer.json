@@ -1,0 +1,14 @@
+{
+    "name": "cronvitals/cronvitals",
+    "description": "Monitors WP-Cron jobs and alerts the site admin when a scheduled job fails or misses its scheduled execution time.",
+    "homepage": "https://cronvitals.com/",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=7.4",
+        "freemius/wordpress-sdk": "^2.13"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

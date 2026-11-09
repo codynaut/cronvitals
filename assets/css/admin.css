@@ -1,0 +1,187 @@
+/**
+ * CronVitals admin styles.
+ */
+
+.cronvitals-wrap .nav-tab-wrapper {
+	margin-bottom: 1em;
+}
+
+/* Status badges (job health + log status). */
+.cronvitals-status {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 3px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.6;
+	white-space: nowrap;
+}
+
+.cronvitals-status-ok {
+	background: #edfaef;
+	color: #135e2a;
+	border: 1px solid #b6e0c1;
+}
+
+.cronvitals-status-warn {
+	background: #fef8ee;
+	color: #8a5300;
+	border: 1px solid #f5d9a8;
+}
+
+.cronvitals-status-fail {
+	background: #fcf0f1;
+	color: #8a1f27;
+	border: 1px solid #f0b7bc;
+}
+
+.cronvitals-status-info {
+	background: #eef4fb;
+	color: #1d4d7a;
+	border: 1px solid #b9d3ec;
+}
+
+.cronvitals-status-muted {
+	background: #f0f0f1;
+	color: #646970;
+	border: 1px solid #dcdcde;
+}
+
+/* Monitoring on/off pills in the jobs table. */
+.cronvitals-badge {
+	display: inline-block;
+	padding: 1px 6px;
+	border-radius: 3px;
+	font-size: 11px;
+	font-weight: 600;
+	margin-right: 4px;
+}
+
+.cronvitals-badge-on {
+	background: #edfaef;
+	color: #135e2a;
+}
+
+.cronvitals-badge-off {
+	background: #f0f0f1;
+	color: #646970;
+}
+
+/* License status text. */
+.cronvitals-license-status {
+	font-weight: 600;
+}
+
+.cronvitals-license-active {
+	color: #135e2a;
+}
+
+.cronvitals-license-expired {
+	color: #8a1f27;
+}
+
+.cronvitals-license-inactive {
+	color: #646970;
+}
+
+/* Pro feature tag. */
+.cronvitals-pro-tag {
+	display: inline-block;
+	padding: 1px 6px;
+	border-radius: 3px;
+	background: #2271b1;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 600;
+	vertical-align: middle;
+}
+
+.cronvitals-tier-banner {
+	margin-top: 1em;
+}
+
+/* Overview stat cards. */
+.cronvitals-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin: 1em 0 1.5em;
+}
+
+.cronvitals-card {
+	flex: 1 1 140px;
+	min-width: 140px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-left-width: 4px;
+	border-radius: 4px;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+}
+
+.cronvitals-card-value {
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 1.1;
+}
+
+.cronvitals-card-label {
+	margin-top: 6px;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	color: #646970;
+}
+
+.cronvitals-card-ok {
+	border-left-color: #2ea043;
+}
+
+.cronvitals-card-warn {
+	border-left-color: #d98500;
+}
+
+.cronvitals-card-fail {
+	border-left-color: #d63638;
+}
+
+.cronvitals-card-info {
+	border-left-color: #2271b1;
+}
+
+.cronvitals-card-muted {
+	border-left-color: #c3c4c7;
+}
+
+/* Overview "By job" table.
+ *
+ * The table is table-layout:fixed, so its nine columns are handed equal width
+ * regardless of content: the hook column gets no more room than "Runs", and a
+ * name like wp_privacy_delete_old_export_files wraps mid-identifier because an
+ * underscore is not a break opportunity. Widening the first column (and letting
+ * the numeric ones take what they need) keeps hook names on one line.
+ */
+.cronvitals-jobs-stats th:first-child,
+.cronvitals-jobs-stats td:first-child {
+	width: 26%;
+}
+
+.cronvitals-jobs-stats td:first-child code {
+	white-space: nowrap;
+}
+
+/* Jobs and Logs list tables.
+ *
+ * Same problem as the Overview table above: WP_List_Table renders with
+ * table-layout:fixed, so the hook column is handed the same width as "Duration"
+ * and long identifiers break mid-word — wp_privacy_delete_old_export_file / s.
+ * The hook name is the row's identifier, so it gets room and stays on one line.
+ */
+.cronvitals-wrap .wp-list-table .column-hook {
+	width: 22%;
+}
+
+.cronvitals-wrap .wp-list-table .column-hook code {
+	white-space: nowrap;
+}
